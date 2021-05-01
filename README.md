@@ -52,7 +52,7 @@ AES structure
 
 Once it is established that all four stages are reversible, it is easy to verify that decryption does recover the plaintext.
 
- ![image-20210501110027185](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110027185.png)
+![image](https://user-images.githubusercontent.com/56964828/116781035-fa3fba80-aa9d-11eb-8090-ce16d2dc1ea8.png)
 
 **Substitute Bytes Transformation**
 
@@ -80,12 +80,11 @@ The matrix of 4x4 is transformed by performing array multiplication. All operati
 
 For encryption.
 
-![image-20210501110046337](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110046337.png) 
+![image](https://user-images.githubusercontent.com/56964828/116781043-06c41300-aa9e-11eb-9184-c4888d639b3f.png)
 
 For decryption 
 
- ![image-20210501110055864](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110055864.png)
-
+![image](https://user-images.githubusercontent.com/56964828/116781048-0a579a00-aa9e-11eb-8e59-59578d03657e.png)
  
 
 **AddRoundKey Transformation**
@@ -106,7 +105,7 @@ cipher. The pseudocode on the next page describes the expansion.
 
 | PSUEDO CODE (units in  bytes)                                | Subworld Function                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![image-20210501110113423](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110113423.png) | ![image-20210501110119353](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110119353.png) |
+| ![image](https://user-images.githubusercontent.com/56964828/116781051-10e61180-aa9e-11eb-8fb4-8389aa1f0539.png) | ![image](https://user-images.githubusercontent.com/56964828/116781053-15aac580-aa9e-11eb-89b6-21d8fe96d38c.png) |
 
 **1.** Rot Word performs a one-byte circular left shift on a word. This means that an
 
@@ -117,8 +116,8 @@ input word is transformed into.
 S-box (Table 5.2a).
 
 **3.** The result of steps 1 and 2 is XORed with a round constant.
+![image](https://user-images.githubusercontent.com/56964828/116781055-18a5b600-aa9e-11eb-8666-c76b16924ae8.png)
 
- ![image-20210501110134654](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110134654.png)
 
 All of these can be easily implemented in Verilog using functions.
 
@@ -128,24 +127,23 @@ All of these can be easily implemented in Verilog using functions.
 
  A key is Xor-ed with text to generate cipher. Doing this again returns us the plain text.
 
- ![image-20210501110148576](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110148576.png)
+![image](https://user-images.githubusercontent.com/56964828/116781058-1e030080-aa9e-11eb-882b-75dfa99ec666.png)
 
 **CBC Mode or Cipher Block Chaining:**
 
  Input to the encryption algo is the Xor of the next 128-bit plaintext and the preceding 128 bit of cipher text.
 
- ![image-20210501110201739](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110201739.png)
+![image](https://user-images.githubusercontent.com/56964828/116781062-23f8e180-aa9e-11eb-9441-dbf5c083c71e.png)
 
 **CFB Mode Cipher CodeBlock:** Input is processed s bits at a time. Preceding ciphertext is used as input to the encryption algorithm to produce pseudorandom output, which is Xored with plaintext to produce next unit of ciphertext.
 
- ![image-20210501110213415](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110213415.png)
+![image](https://user-images.githubusercontent.com/56964828/116781066-29562c00-aa9e-11eb-8164-73263f2b0048.png)
 
 **OFB Mode or Output Feedback:** 
 
 Similar to CFB, except that input to encryption algorithm is the preceding encryption output, and full blocks are used.
 
- ![image-20210501110225047](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110225047.png)
-
+![image](https://user-images.githubusercontent.com/56964828/116781071-2fe4a380-aa9e-11eb-9e79-87cd567514ca.png)
 **Conclusion**
 
 The basic AES structure remains same in all the modes which makes the system very robust. 
