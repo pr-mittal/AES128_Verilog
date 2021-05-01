@@ -1,0 +1,22 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../cfb.srcs/sources_1/new/s_box.v" \
+"../../../../cfb.srcs/sources_1/new/shift_rows.v" \
+"../../../../cfb.srcs/sources_1/new/mix_columns.v" \
+"../../../../cfb.srcs/sources_1/new/expand_key.v" \
+"../../../../cfb.srcs/sources_1/new/encrypt.v" \
+"../../../../cfb.srcs/sources_1/new/decrypt.v" \
+"../../../../cfb.srcs/sim_1/new/t_read_image.v" \
+"../../../../cfb.srcs/sim_1/new/t_sbox.v" \
+"../../../../cfb.srcs/sim_1/new/t_shift_rows.v" \
+"../../../../cfb.srcs/sim_1/new/t_mix_columns.v" \
+"../../../../cfb.srcs/sim_1/new/t_key_expansion.v" \
+"../../../../cfb.srcs/sim_1/new/t_cipher_128b.v" \
+"../../../../cfb.srcs/sim_1/new/t_ecb_encode.v" \
+"../../../../cfb.srcs/sim_1/new/t_ecb_decode.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

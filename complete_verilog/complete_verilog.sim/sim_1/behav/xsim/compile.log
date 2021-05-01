@@ -1,0 +1,40 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sources_1/new/s_box.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module s_box
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sources_1/new/shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift_rows
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sources_1/new/mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sources_1/new/expand_key.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module expand_key
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sources_1/new/encrypt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module encrypt
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sources_1/new/decrypt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decrypt
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_read_image.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_read_image
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_sbox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_sbox
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_shift_rows.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_shift_rows
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_mix_columns.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_mix_columns
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_key_expansion.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_key_expansion
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_cipher_128b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_cipher_128b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_ecb_encode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_ecb_encode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_ecb_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_ecb_decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_cbc_encode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_cbc_encode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_cbc_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_cbc_decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_cfb_encode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_cfb_encode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_cfb_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_cfb_decode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_ofb_encode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_ofb_encode
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.srcs/sim_1/new/t_ofb_decode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module t_ofb_decode
