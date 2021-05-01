@@ -116,7 +116,8 @@ input word is transformed into.
 S-box (Table 5.2a).
 
 **3.** The result of steps 1 and 2 is XORed with a round constant.
-![image](https://user-images.githubusercontent.com/56964828/116781055-18a5b600-aa9e-11eb-8666-c76b16924ae8.png)
+![image](https://user-images.githubusercontent.com/56964828/116781150-bef1bb80-aa9e-11eb-8379-289f0c285c55.png)
+
 
 
 All of these can be easily implemented in Verilog using functions.
@@ -126,24 +127,24 @@ All of these can be easily implemented in Verilog using functions.
 **ECB Mode or Electronic CodeBlock:**
 
  A key is Xor-ed with text to generate cipher. Doing this again returns us the plain text.
+![image](https://user-images.githubusercontent.com/56964828/116781055-18a5b600-aa9e-11eb-8666-c76b16924ae8.png)
 
-![image](https://user-images.githubusercontent.com/56964828/116781058-1e030080-aa9e-11eb-882b-75dfa99ec666.png)
 
 **CBC Mode or Cipher Block Chaining:**
 
  Input to the encryption algo is the Xor of the next 128-bit plaintext and the preceding 128 bit of cipher text.
-
-![image](https://user-images.githubusercontent.com/56964828/116781062-23f8e180-aa9e-11eb-9441-dbf5c083c71e.png)
+![image](https://user-images.githubusercontent.com/56964828/116781058-1e030080-aa9e-11eb-882b-75dfa99ec666.png)
 
 **CFB Mode Cipher CodeBlock:** Input is processed s bits at a time. Preceding ciphertext is used as input to the encryption algorithm to produce pseudorandom output, which is Xored with plaintext to produce next unit of ciphertext.
 
-![image](https://user-images.githubusercontent.com/56964828/116781066-29562c00-aa9e-11eb-8164-73263f2b0048.png)
+![image](https://user-images.githubusercontent.com/56964828/116781062-23f8e180-aa9e-11eb-9441-dbf5c083c71e.png)
+
 
 **OFB Mode or Output Feedback:** 
 
 Similar to CFB, except that input to encryption algorithm is the preceding encryption output, and full blocks are used.
+![image](https://user-images.githubusercontent.com/56964828/116781066-29562c00-aa9e-11eb-8164-73263f2b0048.png)
 
-![image](https://user-images.githubusercontent.com/56964828/116781071-2fe4a380-aa9e-11eb-9e79-87cd567514ca.png)
 **Conclusion**
 
 The basic AES structure remains same in all the modes which makes the system very robust. 
@@ -158,7 +159,7 @@ The CFB mode can operate in real time with s bit input. The advantage of OFB is 
 
 For wrong key, initial value the output plaintext / here the final image changes drastically. 
 
- ![image-20210501110237131](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110237131.png)
+![image](https://user-images.githubusercontent.com/56964828/116781071-2fe4a380-aa9e-11eb-9e79-87cd567514ca.png)
 
 All the given modes have advantages and their disadvantage as some are more secure and some might prove to be more power and hardware efficient. So, depending on the system either mode can be used or the encryption module needs to standardised for all systems for applications of IOT to increase.
 
