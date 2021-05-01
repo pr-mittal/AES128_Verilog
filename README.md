@@ -30,7 +30,7 @@ Then it is decoded and the bits are converted to image using python code.
 
 Input is 1024x1024 grayscale image which has to be converted into bits and sent after implementing one of modes of AES Encryption technique.
 
- 	![image-20210501110003402](C:\Users\prana\AppData\Roaming\Typora\typora-user-images\image-20210501110003402.png)
+![image](https://user-images.githubusercontent.com/56964828/116781028-f318ac80-aa9d-11eb-8049-bd2856c2e66f.png)
 
    First the image is converted to binary bit and saved in a .txt file that is read from vivid testbench and used as bit input for encoding and output for decoding processes. Also using python NumPy library we can convert the .txt bit file to image again. 
 
