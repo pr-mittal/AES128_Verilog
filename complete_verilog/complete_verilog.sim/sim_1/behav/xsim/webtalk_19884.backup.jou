@@ -2,11 +2,11 @@
 # Webtalk v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri Apr 30 14:38:42 2021
-# Process ID: 17464
+# Start of session at: Fri Apr 30 15:39:39 2021
+# Process ID: 19884
 # Current directory: C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.sim/sim_1/behav/xsim/xsim.dir/t_cfb_encode_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.sim/sim_1/behav/xsim/xsim.dir/t_ofb_encode_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.sim/sim_1/behav/xsim/xsim.dir/t_cfb_encode_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/prana/OneDrive/Desktop/udyam/ichip/ps2/cfb/cfb.sim/sim_1/behav/xsim/xsim.dir/t_ofb_encode_behav/webtalk/xsim_webtalk.tcl -notrace
