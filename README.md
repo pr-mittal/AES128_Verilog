@@ -24,7 +24,35 @@ To code, we have used a sample image that has been encoded to bitstream of 128 b
 
 Then it is decoded and the bits are converted to image using python code.
 
- 
+ **Results**
+
+**Key Expansion**
+
+![image](https://user-images.githubusercontent.com/56964828/128908289-4cf7f5ab-3c40-4f98-8908-46d32b28d2d6.png)
+
+**Mix Columns**
+
+![image](https://user-images.githubusercontent.com/56964828/128908388-96f3b619-8841-402b-bf9c-41bcc4e51a70.png)
+
+**Sbox**
+
+![image](https://user-images.githubusercontent.com/56964828/128908521-ba0705e8-5cb9-48d5-8924-017b9aa9759b.png)
+
+**Inverse S box**
+
+![image](https://user-images.githubusercontent.com/56964828/128909114-38b33282-8ed7-4f51-9601-10e3a977a657.png)
+
+**Shift Rows**
+
+![image](https://user-images.githubusercontent.com/56964828/128909606-e6b417ab-1097-4287-9654-b3939e93f64f.png)
+
+**Image Input/Output**
+
+![image](https://user-images.githubusercontent.com/56964828/128909789-d3440f51-b8ad-4e9d-8c29-684a99c49540.png)
+
+**Encrpyted Ouput**
+
+![image](https://user-images.githubusercontent.com/56964828/128909889-e8712af2-67f4-4d5d-9213-63243610ed5c.png)
 
 **Implementation**
 
@@ -85,7 +113,7 @@ For encryption.
 For decryption 
 
 ![image](https://user-images.githubusercontent.com/56964828/116781048-0a579a00-aa9e-11eb-8e59-59578d03657e.png)
- 
+
 
 **AddRoundKey Transformation**
 
