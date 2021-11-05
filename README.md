@@ -38,15 +38,18 @@ The AES encryption process[1]. The cipher takes a plaintext block size of 128 bi
 
 bytes (128bits) the algorithm is referred to as AES-128.
 
-AES structure
+#### AES structure
 
-| The key                                                      | expanded into an  array of forty-four 32-bit  words, **w**[*i*].  Four distinct words (128 bits) serve as a round key for each round |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Four different stages  are used, one of permutation and three of substitution |                                                              |
-| **Substitute bytes:**                                        | Uses an S-box to  perform a byte-by-byte substitution of  the block |
-| **ShiftRows:**                                               | A simple permutation                                         |
-| **MixColumns:**                                              | A substitution that  makes use of arithmetic over            |
-| **AddRoundKey:**                                             | A simple bitwise XOR  of the current block with a portion  of the expanded key |
+The key  expanded into an  array of forty-four 32-bit  words, w[*i*].  Four distinct words (128 bits) serve as a round key for each round.
+
+Four different stages  are used, one of permutation and three of substitution
+
+|                       |                                                              |
+| --------------------- | ------------------------------------------------------------ |
+| **Substitute bytes:** | Uses an S-box to  perform a byte-by-byte substitution of  the block |
+| **ShiftRows:**        | A simple permutation                                         |
+| **MixColumns:**       | A substitution that  makes use of arithmetic over            |
+| **AddRoundKey:**      | A simple bitwise XOR  of the current block with a portion  of the expanded key |
 
  
 
@@ -72,7 +75,7 @@ In Verilog, this has been implemented by giving hard coded values between 1and 1
 
  
 
-**MixColumns Transformation**
+**MixColumns Transformation** [6]
 
  
 
@@ -80,12 +83,75 @@ The matrix of 4x4 is transformed by performing array multiplication. All operati
 
 For encryption.
 
-![image](https://user-images.githubusercontent.com/56964828/116781043-06c41300-aa9e-11eb-9184-c4888d639b3f.png)
+![image](C:\Users\prana\Downloads\116781043-06c41300-aa9e-11eb-9184-c4888d639b3f.png)
 
 For decryption 
 
 ![image](https://user-images.githubusercontent.com/56964828/116781048-0a579a00-aa9e-11eb-8e59-59578d03657e.png)
- 
+
+Method 1 :
+
+Galois Multiplication Lookup Tables
+
+![image](https://user-images.githubusercontent.com/56964828/127133934-4db0e3d4-f11f-4f99-8342-efd60746955f.png)
+![image](https://user-images.githubusercontent.com/56964828/127133958-733d0955-fce1-441a-ba60-39ed2aa5d562.png)
+![image](https://user-images.githubusercontent.com/56964828/127133988-7764f9db-8275-4184-a45c-1aef57d989b9.png)
+![image](https://user-images.githubusercontent.com/56964828/127134020-b8b26651-ead2-479f-b8a5-ae00a53b7acf.png)
+![image](https://user-images.githubusercontent.com/56964828/127134062-aa93f4e5-fde4-4a4f-acd6-3ee1f5cf4dd1.png)
+![image](https://user-images.githubusercontent.com/56964828/127134097-df30ce20-25a9-4a7e-ade8-33c4f46f44e0.png)
+
+Method 2: Mathematical application (architecture 1) [14]
+{0D}* M(x) = (m0 + m5 + m6) + (m1 + m5 + m7) x + (m0 + m2 + m6) x2 + (m0 + m1 + m3 + m5 + m6 + m7) x3 + (m1 + m2 + m4 + m5 + m7) x4+ (m2 + m3 + m5 + m6) x5 + (m3 + m4 + m6 + m7) x6 + (m4 + m5 + m7) x7.
+
+{0E}* M(x) = (m5 + m6 + m7) + (m0 + m5) x + (m0 + m1 + m6) x2 + (m0 + m1 + m2 + m5 + m6) x3 + (m1 + m2 + m3 + m5) x4+ (m2 + m3 + m4 + m6) x5 + (m3 + m4 + m5 + m7) x6 + (m4 + m5 + m6) x7
+
+{0B}* M(x)= (m0 + m5 + m7) + (m0 + m1 + m5 + m6 + m7) x + (m1 + m2 + m6 + m7) x2 + (m0 + m2 + m3 + m5) x3 + (m1 + m3 + m4 + m5 + m6 + m7) x4+ (m2 + m4 + m5 + m6 + m7) x5 + (m3 + m5 + m6 + m7) x6 + (m4 + m6 + m7) x7
+
+{09}* M(x) = (m0 + m5) + (m1 + m5 + m6) x + (m2 + m6 + m7) x2 + (m0 + m3 + m5 + m7) x3 + (m1 + m4 + m5 + m6) x4+ (m2 + m5 + m6 + m7) x5 + (m3 + m6 + m7) x6 + (m4 + m7) x7
+
+{03}* M(x) = (m0 + m7) + (m0 + m1 + m7) x + (m1 + m2) x2 + (m2 + m3 + m7) x3 + (m3 + m4 + m7) x4+ (m4 + m5) x5 + (m5 + m6) x6 + (m6 + m7) x7. (7)
+
+{02}* M(x) = (m7) + (m0 +m7) x + (m1) x2 + (m2 + m7) x3 + (m3 + m7) x4+ (m4) x5 + (m5) x6 + (m6) x7. (8)
+
+{01}* M(x) = M(x) (9)
+
+Method 3 :
+
+According to the two architectures previous we were able to achieve other method based on
+the Properties of the binary calculation that have for goal the easiness the use of this operation to
+the material level you find the manner and the stages that we followed in order to calculate the
+multiplication mixcolumn below:
+Multiplication by 01 (00000001 in binary): The number remains unaltered
+Multiplication by 02 (00000010 in binary): The bits of the number are baffled toward the left:
+N = 10101110 = > 2N = 101011100
+Since the operations make themselves in a number finished of the values (field of Galois GF (28)
+of 256 values), the MSB of 2N must be omitted:
+2N = 101011100
+2N = 01011100
+If the MSB was (that we have just omitted) a '0', then 2N are the final result of the multiplication:
+2N = 01011100
+If the MSB was (that we have just omitted) a '1', what is the case in this example, then it is
+necessary to add (XOR) the binary number again 00011011 (1B) to 2N in order to compensate
+the loss of the MSB caused (provoked) by the shift:
+2N XOR 00011011 = 01011100 XOR 00011011 = 01000111 2N = 01000111
+For the Multiplications (03; 09; 0B; 0D; 0E):
+we take The MSB like a mask and one calculates the operations (temp1, temp2 and temp3) of
+shift on the left to add by the number (1B) in order to compensate the loss of the MSB caused
+(provoked) by the shift.
+and_mask := m(7) & m(7) & m(7) & m(7) & m(7) & m(7) & m(7) & m(7);
+temp1:= m(6 downto 0) & '0' xor (("00011011") and and_mask);
+and_mask := temp1(7) & temp1(7) & temp1(7) & temp1(7) & temp1(7) & temp1(7) & temp1(7)
+& temp1(7);
+temp2:= temp1(6 downto 0) & '0' xor (("00011011") and and_mask);
+and_mask := temp2(7) & temp2(7) & temp2(7) & temp2(7) & temp2(7) & temp2(7) & temp2(7)
+& temp2(7);
+temp3:= temp2(6 downto 0) & '0' xor (("00011011") and and_mask);
+Multiplication par 03 (00000011 en binaire) :temp1 xorm
+Multiplication par 09 (00001001 en binaire) : temp3 xor m
+Multiplication par 0B (00001011 en binaire) : temp1 xor temp3 xor m
+Multiplication par 0D (00001101 en binaire) : temp2 xor temp3 xorm
+Multiplication par 0E (00001110 en binaire) : temp1 xor temp2 xor temp3
+Note => &: Operators of concatenation
 
 **AddRoundKey Transformation**
 
@@ -118,7 +184,10 @@ S-box (Table 5.2a).
 **3.** The result of steps 1 and 2 is XORed with a round constant.
 ![image](https://user-images.githubusercontent.com/56964828/116781150-bef1bb80-aa9e-11eb-8379-289f0c285c55.png)
 
+Overall Pipelined Architecture :
 
+![image](https://user-images.githubusercontent.com/56964828/127138635-c150c970-cb84-4a5b-9d64-45102ba23b36.png)
+![image](https://user-images.githubusercontent.com/56964828/127138720-97e76db9-98b2-4cd0-86d4-88cb82395022.png)
 
 All of these can be easily implemented in Verilog using functions.
 
@@ -135,7 +204,7 @@ All of these can be easily implemented in Verilog using functions.
  Input to the encryption algo is the Xor of the next 128-bit plaintext and the preceding 128 bit of cipher text.
 ![image](https://user-images.githubusercontent.com/56964828/116781058-1e030080-aa9e-11eb-882b-75dfa99ec666.png)
 
-**CFB Mode Cipher CodeBlock:** Input is processed s bits at a time. Preceding ciphertext is used as input to the encryption algorithm to produce pseudorandom output, which is Xored with plaintext to produce next unit of ciphertext.
+**CFB Mode Cipher Feedback Block:** Input is processed s bits at a time. Preceding ciphertext is used as input to the encryption algorithm to produce pseudorandom output, which is Xored with plaintext to produce next unit of ciphertext.
 
 ![image](https://user-images.githubusercontent.com/56964828/116781062-23f8e180-aa9e-11eb-9441-dbf5c083c71e.png)
 
@@ -167,7 +236,10 @@ For FPGA implementation all the components need to be perfectly timed and implem
 
  
 
- 
+####  Chip Configuration
+
+RTL schematic black box design of overall project in which Data in , key acts as basic input for process along with that CE , K EN,DIN , ENC DEC are Clock Enable ,CLK, Key Enable , Data
+Input status, Encryption decryption mode selection respectively acts as system control inputs. DATA_OUT is output either cipher text or plain text depend on status of ENC DEC mode.
 
 **Future Endeavours**
 
@@ -187,7 +259,9 @@ For FPGA implementation all the components need to be perfectly timed and implem
 
 [4] https://en.wikipedia.org/wiki/OSI_model
 
+[5] M. Biglari, E. Qasemi and B. Pourmohseni, "Maestro: A high performance AES encryption/decryption system," The 17th CSI International Symposium on Computer Architecture & Digital Systems (CADS 2013), 2013, pp. 145-148, doi: 10.1109/CADS.2013.6714255.
 
+[6] Design and Implementation A different Architectures of mixcolumn in FPGA http://dx.doi.org/10.5121/vlsic.2012.3402
 
 **File Structure**
 
