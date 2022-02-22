@@ -146,43 +146,72 @@ Method 2: Mathematical application (architecture 1) [14]
 
 Method 3 :
 
-According to the two architectures previous we were able to achieve other method based on
-the Properties of the binary calculation that have for goal the easiness the use of this operation to
-the material level you find the manner and the stages that we followed in order to calculate the
-multiplication mixcolumn below:
-Multiplication by 01 (00000001 in binary): The number remains unaltered
-Multiplication by 02 (00000010 in binary): The bits of the number are baffled toward the left:
+According to the two architectures previous we were able to achieve other method based on the Properties of the binary calculation that have for goal the easiness the use of this operation to the material level you find the manner and the stages that we followed in order to calculate the multiplication mixcolumn below: 
+
+Multiplication by 01 (00000001 in binary): 
+
+The number remains unaltered Multiplication by 02 (00000010 in binary): 
+
+The bits of the number are baffled toward the left: 
+
 N = 10101110 = > 2N = 101011100
+
 Since the operations make themselves in a number finished of the values (field of Galois GF (28)
+
 of 256 values), the MSB of 2N must be omitted:
+
 2N = 101011100
+
 2N = 01011100
+
 If the MSB was (that we have just omitted) a '0', then 2N are the final result of the multiplication:
+
 2N = 01011100
+
 If the MSB was (that we have just omitted) a '1', what is the case in this example, then it is
+
 necessary to add (XOR) the binary number again 00011011 (1B) to 2N in order to compensate
+
 the loss of the MSB caused (provoked) by the shift:
+
 2N XOR 00011011 = 01011100 XOR 00011011 = 01000111 2N = 01000111
+
 For the Multiplications (03; 09; 0B; 0D; 0E):
+
 we take The MSB like a mask and one calculates the operations (temp1, temp2 and temp3) of
+
 shift on the left to add by the number (1B) in order to compensate the loss of the MSB caused
+
 (provoked) by the shift.
+
 and_mask := m(7) & m(7) & m(7) & m(7) & m(7) & m(7) & m(7) & m(7);
+
 temp1:= m(6 downto 0) & '0' xor (("00011011") and and_mask);
+
 and_mask := temp1(7) & temp1(7) & temp1(7) & temp1(7) & temp1(7) & temp1(7) & temp1(7)
 & temp1(7);
+
 temp2:= temp1(6 downto 0) & '0' xor (("00011011") and and_mask);
+
 and_mask := temp2(7) & temp2(7) & temp2(7) & temp2(7) & temp2(7) & temp2(7) & temp2(7)
+
 & temp2(7);
+
 temp3:= temp2(6 downto 0) & '0' xor (("00011011") and and_mask);
+
 Multiplication par 03 (00000011 en binaire) :temp1 xorm
+
 Multiplication par 09 (00001001 en binaire) : temp3 xor m
+
 Multiplication par 0B (00001011 en binaire) : temp1 xor temp3 xor m
+
 Multiplication par 0D (00001101 en binaire) : temp2 xor temp3 xorm
+
 Multiplication par 0E (00001110 en binaire) : temp1 xor temp2 xor temp3
+
 Note => &: Operators of concatenation
-=======
->>>>>>> 513d3b4d7e7f2f331fcef0077a8f23dc4f605fb9
+
+
 
 **AddRoundKey Transformation**
 
